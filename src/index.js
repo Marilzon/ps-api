@@ -20,6 +20,7 @@ const handler = (request, response) => {
   request.queryString = { id: isNaN(id) ? id : Number(id) };
 
   const key = `/${route}:${method.toLowerCase()}`;
+  console.log(key);
 
   response.writeHead(200, DEFAULT_HEADER);
 
@@ -27,5 +28,6 @@ const handler = (request, response) => {
   return chosen(request, response);
 };
 
-createServer(handler)
-  .listen(PORT, () => console.log("server running at", PORT));
+createServer(handler).listen(PORT, () =>
+  console.log("server running at", PORT)
+);

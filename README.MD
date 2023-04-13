@@ -1,7 +1,7 @@
-- A pasta "entities" geralmente contém as classes ou interfaces que representam os objetos de negócio do sistema, ou seja, as entidades do domínio. Essas entidades geralmente possuem atributos e comportamentos que refletem as regras de negócio da aplicação.
+- The "entities" folder usually contains the classes or interfaces that represent the system's business objects, that is, the domain entities. These entities usually have attributes and behaviors that reflect the application's business rules.
 
-- A pasta "factories" contém as classes responsáveis por criar instâncias de objetos complexos, como por exemplo, aquelas que requerem a inicialização de diversos outros objetos.
+- The "factories" folder contains the classes responsible for creating instances of complex objects, such as those that require the initialization of several other objects.
 
-- A pasta "repositories" contém as classes responsáveis por realizar a persistência dos dados das entidades em alguma fonte de dados, como um banco de dados relacional. Elas fornecem métodos para salvar, buscar, excluir e atualizar essas informações.
+- The "repositories" folder contains the classes responsible for persisting entity data in some data source, such as a relational database. They provide methods for saving, searching, deleting, and updating this information.
 
-- A pasta "services" contém as classes que implementam a lógica de negócio específica da aplicação. Por exemplo, elas podem ser responsáveis pela validação de dados, cálculos, e outras operações que afetam o estado do sistema.
+- The "services" folder contains the classes that implement the application's specific business logic. For example, they can be responsible for data validation, calculations, and other operations that affect the state of the system.

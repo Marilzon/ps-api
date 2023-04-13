@@ -18,4 +18,3 @@ export const generateInstance = function () {
 
   return heroService;
 };
-
