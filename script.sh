@@ -1,4 +1,5 @@
-echo 'request all heroes'
+echo -e "request all heroes\n"
 curl localhost:3000/heroes
 
-ehco ''
+echo -e "\nrequest first\n"
+curl localhost:3000/heroes/1

@@ -1,1 +1,6 @@
-[{ "id": 1, "name": "Max", "age": 100, "power": "Force" }]
+[
+  { "id": 1, "name": "Max", "age": 100, "power": "Force" },
+  { "id": 2, "name": "Max", "age": 100, "power": "Speed" },
+  { "id": 3, "name": "Max", "age": 100, "power": "Velocity" },
+  { "id": 4, "name": "Max", "age": 100, "power": "Force" }
+]

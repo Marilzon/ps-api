@@ -1,12 +1,24 @@
 import { createServer } from "node:http";
+import { generateInstance } from "./factories/HeroFactory.js";
+import { Hero } from "./entities/Hero.js";
+
 const PORT = 3000;
 const DEFAULT_HEADER = { "Content-Type": "application/json" };
+const heroService = generateInstance();
 
 const routes = {
   "/heroes:get": async (request, response) => {
     const { id } = request.queryString;
-    console.log({ id });
+    const heroes = await heroService.find(id);
+    response.write(JSON.stringify({ results: heroes }));
     return response.end();
+  },
+  "heroes:post": async (request, response) => {
+    for await (const data of request) {
+      const item = JSON.parse(data);
+      console.log(item);
+      response.end("OK");
+    }
   },
   default: (request, response) => {
     response.write("Home");
@@ -20,7 +32,6 @@ const handler = (request, response) => {
   request.queryString = { id: isNaN(id) ? id : Number(id) };
 
   const key = `/${route}:${method.toLowerCase()}`;
-  console.log(key);
 
   response.writeHead(200, DEFAULT_HEADER);
 
