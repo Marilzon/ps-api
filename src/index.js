@@ -1,4 +1,4 @@
-const http = require("node:http");
+import { createServer } from "node:http";
 const PORT = 3000;
 const DEFAULT_HEADER = { "Content-Type": "application/json" };
 
@@ -27,6 +27,5 @@ const handler = (request, response) => {
   return chosen(request, response);
 };
 
-http
-  .createServer(handler)
+createServer(handler)
   .listen(PORT, () => console.log("server running at", PORT));

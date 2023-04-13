@@ -1,4 +1,4 @@
-class HeroService {
+export class HeroService {
   constructor({ heroRepository }) {
     this.heroRepository = heroRepository;
   }
@@ -11,5 +11,3 @@ class HeroService {
     return this.heroRepository.create(data);
   }
 }
-
-module.exports = HeroService;

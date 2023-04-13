@@ -1,10 +1,13 @@
-const HeroRepository = require("../repositories/heroRepository");
-const HeroService = require("../services/heroService");
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { HeroRepository } from "../repositories/HeroRepository.js";
+import { HeroService } from "../services/HeroService.js";
 
-const { join } = require("node:path");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const filename = join(__dirname, "../../database", "data.json");
 
-const generateInstance = function () {
+export const generateInstance = function () {
   const heroRepository = new HeroRepository({
     file: filename,
   });
@@ -16,4 +19,3 @@ const generateInstance = function () {
   return heroService;
 };
 
-module.exports = { generateInstance };

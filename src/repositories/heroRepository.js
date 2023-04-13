@@ -1,6 +1,6 @@
-const { readFile, writeFile } = require("fs").promises;
+import { readFile, writeFile } from "fs/promises";
 
-class HeroRepository {
+export class HeroRepository {
   constructor({ file }) {
     this.file = file;
   }
@@ -29,5 +29,3 @@ class HeroRepository {
     return data.id;
   }
 }
-
-module.exports = HeroRepository;
